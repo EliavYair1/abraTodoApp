@@ -6,6 +6,7 @@ const Todo = ({ todo, index, completeTodo, removeTodo }) => {
       style={{ textDecoration: todo.isCompleted ? 'line-through' : '' }}
     >
       {todo.text}
+
       <div className="btn-container">
         <i
           type="button"

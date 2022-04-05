@@ -16,10 +16,11 @@ function App() {
     newTodos[index].isCompleted = true;
     setTodos(newTodos);
   };
+
   // removing a task
-  const removeTodo = (idx) => {
+  const removeTodo = (index) => {
     const newTodos = [...todos];
-    newTodos.splice(idx, 1);
+    newTodos.splice(index, 1);
     setTodos(newTodos);
   };
   return (
