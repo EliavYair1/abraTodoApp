@@ -3,13 +3,18 @@ import AddTodo from './components/AddTodo';
 import './App.css';
 import Todo from './components/Todo';
 import img from './logo/Logo_2022-04-04 (4)/Logo.png';
+
 function App() {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState([
+    { text: 'create a todo', isCompleted: false },
+  ]);
+
   // adding a task
   const addTodo = (text) => {
     const newTodos = [...todos, { text }];
     setTodos(newTodos);
   };
+
   // checking a task
   const completeTodo = (index) => {
     const newTodos = [...todos];
@@ -23,6 +28,7 @@ function App() {
     newTodos.splice(index, 1);
     setTodos(newTodos);
   };
+
   return (
     <div className="App">
       <div className="todo-list">
