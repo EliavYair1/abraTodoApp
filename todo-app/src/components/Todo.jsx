@@ -1,5 +1,11 @@
 import './Todo.css';
 const Todo = ({ todo, index, completeTodo, removeTodo }) => {
+  const handleRemove = (index) => {
+    removeTodo(index);
+  };
+  const handleComplete = () => {
+    completeTodo(index);
+  };
   return (
     <div
       className="todo"
@@ -10,13 +16,13 @@ const Todo = ({ todo, index, completeTodo, removeTodo }) => {
       <div className="btn-container">
         <i
           type="button"
-          className="check-btn bi bi-check2-all"
-          onClick={() => completeTodo(index)}
+          className="check-btn bi bi-check2-all "
+          onClick={handleComplete}
         ></i>
         <i
           type="button"
           className="delete-btn bi bi-x-circle"
-          onClick={() => removeTodo(index)}
+          onClick={handleRemove}
         ></i>
       </div>
     </div>
