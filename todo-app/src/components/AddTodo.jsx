@@ -1,13 +1,18 @@
 import { useState } from 'react';
-import './AddTodo.css';
+import { useDispatch } from 'react-redux';
+import { addTodo } from '../Redux/StoreSlice';
 
-function AddTodo({ addTodo }) {
+function AddTodo() {
   const [value, setValue] = useState('');
-
+  const dispatch = useDispatch();
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!value) return;
-    addTodo(value);
+    dispatch(
+      addTodo({
+        title: value,
+      })
+    );
     setValue('');
   };
   return (

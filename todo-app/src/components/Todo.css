@@ -10,3 +10,18 @@
   padding: 3px 10px;
   width: 100%;
 }
+.delete-btn {
+  color: red;
+  cursor: pointer;
+}
+.delete-btn:hover {
+  color: rgba(236, 76, 76, 0.61);
+}
+.check-btn {
+  color: greenyellow;
+  cursor: pointer;
+  padding-right: 10px;
+}
+.check-btn:hover {
+  color: rgb(11, 182, 11);
+}

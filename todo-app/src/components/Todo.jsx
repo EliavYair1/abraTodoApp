@@ -1,17 +1,20 @@
 import './Todo.css';
-const Todo = ({ todo, index, completeTodo, removeTodo }) => {
+import { useDispatch } from 'react-redux';
+import { todoCompleted, deleteTodo } from '../Redux/StoreSlice';
+const Todo = ({ id, completed, title }) => {
+  const dispatch = useDispatch();
   const handleRemove = (index) => {
-    removeTodo(index);
+    dispatch(deleteTodo({ id: id }));
   };
-  const handleComplete = () => {
-    completeTodo(index);
+  const handleComplete = (index) => {
+    dispatch(todoCompleted({ id: id, completed: !completed }));
   };
   return (
     <div
       className="todo"
-      style={{ textDecoration: todo.isCompleted ? 'line-through' : '' }}
+      style={{ textDecoration: id.completed ? 'line-through' : '' }}
     >
-      {todo.text}
+      {title}
 
       <div className="btn-container">
         <i
